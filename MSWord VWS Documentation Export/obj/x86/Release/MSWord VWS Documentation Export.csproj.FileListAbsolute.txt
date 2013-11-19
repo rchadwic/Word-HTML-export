@@ -1,0 +1,12 @@
+C:\Users\chadwickr\AppData\Local\Temporary Projects\MSWord VWS Documentation Export\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\chadwickr\AppData\Local\Temporary Projects\MSWord VWS Documentation Export\obj\x86\Release\MSWord VWS Documentation Export.csproj.ResolveComReference.cache
+C:\Users\chadwickr\AppData\Local\Temporary Projects\MSWord VWS Documentation Export\bin\Release\MSWord VWS Documentation Export.exe
+C:\Users\chadwickr\AppData\Local\Temporary Projects\MSWord VWS Documentation Export\bin\Release\MSWord VWS Documentation Export.pdb
+C:\Users\chadwickr\AppData\Local\Temporary Projects\MSWord VWS Documentation Export\obj\x86\Release\MSWord VWS Documentation Export.exe
+C:\Users\chadwickr\AppData\Local\Temporary Projects\MSWord VWS Documentation Export\obj\x86\Release\MSWord VWS Documentation Export.pdb
+C:\Users\chadwickr\documents\visual studio 2010\Projects\MSWord VWS Documentation Export\MSWord VWS Documentation Export\obj\x86\Release\MSWord VWS Documentation Export.csproj.ResolveComReference.cache
+C:\Users\chadwickr\documents\visual studio 2010\Projects\MSWord VWS Documentation Export\MSWord VWS Documentation Export\obj\x86\Release\MSWord VWS Documentation Export.exe
+C:\Users\chadwickr\documents\visual studio 2010\Projects\MSWord VWS Documentation Export\MSWord VWS Documentation Export\obj\x86\Release\MSWord VWS Documentation Export.pdb
+C:\Users\chadwickr\documents\visual studio 2010\Projects\MSWord VWS Documentation Export\MSWord VWS Documentation Export\bin\Release\MSWord VWS Documentation Export.exe
+C:\Users\chadwickr\documents\visual studio 2010\Projects\MSWord VWS Documentation Export\MSWord VWS Documentation Export\bin\Release\MSWord VWS Documentation Export.pdb
+C:\Users\chadwickr\documents\visual studio 2010\Projects\MSWord VWS Documentation Export\MSWord VWS Documentation Export\obj\x86\Release\ResolveAssemblyReference.cache
