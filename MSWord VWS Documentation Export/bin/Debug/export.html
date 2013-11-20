@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<LINK href='style.css' rel='stylesheet' type='text/css'></head>
+</head>
+<body>
+<div class='article'>
+
+<div class='step font36 indent0'>Building a game in the Virtual World Sandbox</div>
+<div class='step font14 indent0'>Introduction</div>
+<div class='step font8 indent0'>This document will walk you through the entire process of building a simple game in the VWS environment. It will cover the entire process from start to finish, including creating an account, setting up the scene, creating the objects, scripting the game and finally, publishing. This document assumes that you have some basic knowledge of web browsers and computers in general, but should not require any special prerequisites. By the end of this tutorial, you should have a functioning game you can play, and a good understanding of how to author content in the VWS application.</div>
+<div class='step font8 indent0'>First, an overview of the steps we'll need to take.</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent36'>Part 1 - Getting started</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>Load the website</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>System requirements</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>Sign up for an account</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>Create a blank world</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent36'>Part 2 - Setting up the scene objects</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>Lay out the walls</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>Add the game objects</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent108'>The player</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent108'>The enemies</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent108'>The GameManager</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent108'>The 'food'</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent36'>Part 3 - Scripting</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>The Player Script</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>The Enemy Script</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>The GameManager script</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent36'>Part 4 - Finishing touches</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>Create and position the camera</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent72'>Save and publish the world</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent36'>Appendex 1 - Script explanations</div>
+<div class='numberedlist'></div>
+<div class='step font8 indent36'>Appendex 2 - About the VWS</div>
+<div class='step font14 indent0'>Part 1: Getting started</div>
+<div class='step font8 indent0'>First things first, we'll need to get step before we can start building. This section will walk you through the steps necessary to get a user account and create a world.</div>
+<div class='numberedlist'>1. </div>
+<div class='step font8 indent36'>First, browse to http://vwf.adlnet.gov . You should see a website that looks something like the following.</div>
+<img class='image' src='mmpyf3x4.5pc' />
+
+<div class='numberedlist'>2. </div>
+<div class='step font8 indent36'>Before we can create an application, we'll need to sign in. I assume here that you do not have an account. If you have already signed up for an account, go ahead and skip a few steps. Otherwise, You'll need to click the "Sign Up" button.</div>
+<img class='image' src='iux00f2i.cuu' />
+
+<div class='numberedlist'>3. </div>
+<div class='step font8 indent36'>You should now see a screen where you can choose a username and a password. Be sure the password is something you can remember! You're username can be anything, so long as it is not currently used by another user. I recommend using an email address.</div>
+<img class='image' src='uodaeq0d.kiw' />
+
+<div class='numberedlist'>4. </div>
+<div class='step font8 indent36'>Now that you have created a user account, you'll be automatically logged into the website. You'll know you're logged in because you'll see your user name in the top right corner.</div>
+<img class='image' src='k3as0zeb.ojr' />
+
+<div class='numberedlist'>5. </div>
+<div class='step font8 indent36'>Next, we'll need to create a new world to work in. To do this, click the 'Create' button on the home page.</div>
+<img class='image' src='minae5uv.sjv' />
+
+<div class='numberedlist'>6. </div>
+<div class='step font8 indent36'>You'll see the following page. This page allows you to create a new world based on an existing 'template' world. In this case, we're going to just create a blank world. You should see the words "Create a world based on an empty world." When you click on one of the template world images, you'll select this template, and the text "Create a world based on ..." will change to show the name of the selected world. The template we need, the blank world, is the default. If you do click on one of the other templates, just scroll to the right end of the list, and click the template "an empty world". Give your new world a title and a description.</div>
+<img class='image' src='xxbxrixg.5kq' />
+
+<div class='numberedlist'>7. </div>
+<div class='step font8 indent36'>Click the Create button.</div>
+<img class='image' src='3uvfyezq.v0q' />
+
+<div class='numberedlist'>8. </div>
+<div class='step font8 indent36'>Great! If everything went according to plan, you should see the new world begin to load. Because this world is in editing mode, you'll see a lot of buttons and graphics appear in bars on the top, bottom, and sides of your browser. These are the tools that we'll be using in the next section. You'll also see the default avatar and a white grid in the center of the screen. This avatar is you! We won't be going into any details about how the avatar works today, so just ignore it for now.</div>
+<img class='image' src='1fqpeptk.sly' />
+
+<div class='inset Color13955322'>
+Note: The VWS website uses a lot of cutting edge HTML5 features. If your browser window does not look like the image above, check that you are using the most recent version of Chrome, Firefox, Safari or Internet Explorer. Many mobile versions of these browsers may not be supported.
+</div>
+<div class='numberedlist'>9. </div>
+<div class='step font8 indent36'>Congratulations! You've made it to the end of part one! Now is a good time to get used to moving around in this world. Click and hold with the right mouse button, and drag your mouse. Notice how the view rotates? This is the primary camera mode we'll use when authoring, so it pays to practice a little bit. You can also roll the mouse wheel to zoom in and out, or press and drag with the center mouse button (sometimes the wheel itself is the button, can be pressed in addition to being rolled) to pan the view. Don't worry too much about the left mouse button. It's used for selection, which you'll get plenty of practice with in the next section.</div>
+<div class='inset Color13955322'>
+Note: Don't be afraid to play around. At this point, the worst thing that can happen is that you create some junk in the world that will mess up our tutorial. You can always create another world to start the tutorial again.
+</div>
+<div class='step font14 indent0'>Part 2: Setting up the scene</div>
+<div class='step font8 indent0'>Now that we have a world to work in, we need to create all the objects that will be part of our game. We're going to have to create, move, modify, select, copy and paste a lot of objects for this section. I'm going to show you the basic tools and how they work, but leave it up to you to setup all the pieces once you know how. To start, we need to build some walls to create the game board.</div>
+<div class='numberedlist'>1. </div>
+<div class='step font8 indent36'>First, rotate your camera so you are looking down at the grid. This will help you stay oriented, and makes selecting object and moving them around easier. Zoom out a bit too.</div>
+<img class='image' src='5gbmh3hs.0lv' />
+
+<div class='inset Color15394756'>
+Remember: Zoom by rolling the mouse wheel, rotate the camera by clicking and dragging with the right mouse button
+</div>
+<div class='inset Color15461355'>
+Info: You can move the avatar out of the way by pressing and holding the 'W' button on the keyboard. You'll see a slight blue outline when the window is active and accepting keyboard commands.
+</div>
+<div class='numberedlist'>2. </div>
+<div class='step font8 indent36'>Now, we need to activate a tool that will let us draw the level. Find the 'Tools' menu on the top menubar. Click the 'Block Painter' menu item.</div>
+<img class='image' src='dgrmpjcy.xup' />
+
+<div class='numberedlist'>3. </div>
+<div class='step font8 indent36'>When the Block Painter tool opens, you'll see it slide out on the right, in an area we call the "side panel". The block painter is a quick and easy way to create a lot of geometry quickly. There are other ways you could lay out the level, but this is fun! Let's pick a different texture for our walls by clicking right on the "Pick Texture" button.</div>
+<img class='image' src='zcvypslw.lsk' />
+
+<div class='numberedlist'>4. </div>
+<div class='step font8 indent36'>The Map Browser will appear. This is the tool that is used in many parts of the software whenever you need to choose a texture map. Clicking on the folder icons will show the textures inside that folder, and clicking on an image will select that file as the texture. You can also use the plus icon to enter a texture via URL. For now, let's keep it simple and choose the brick texture. Just click right on the small image of bricks.</div>
+<img class='image' src='nzihnwv5.5jy' />
+
+<div class='numberedlist'>5. </div>
+<div class='step font8 indent36'>The Painter tool will now show the selected texture, and the Map Browser window will disappear. We now need to activate the tool, and set it to 'Build' mode. Click the "Active" button inside the tool's panel, then click 'Build'. The "Active" button should remain lit up.</div>
+<img class='image' src='3rpn24yv.qtq' />
+
+<div class='numberedlist'>6. </div>
+<div class='step font8 indent36'>When you hold your mouse within the 3D window, over the grid, you'll see a faint transparent brick box. The tool is previewing where the next box will be placed. Click and hold with the left mouse button to make a stroke. Boxes will line up along the path of your stroke!</div>
+<img class='image' src='uwdii0kj.0jq' />
+
+<div class='inset Color15461355'>
+Info: You can also delete blocks with the painter tool. Just click the 'delete' button to put the tool into delete mode. Now, when you click and drag, boxes will be destroyed instead of created. Click 'Build' to start building again.
+</div>
+<div class='inset Color13955322'>
+Note: The Sandbox application currently does not support an undo feature. You have been warned!
+</div>
+<div class='numberedlist'>7. </div>
+<div class='step font8 indent36'>Build a maze! Be sure that each path within the maze is just one block thick. This won't be all that important, but it will make the game work better. Take some time to build something simple like the image below.</div>
+<img class='image' src='mkgsyq0q.pei' />
+
+<div class='numberedlist'>8. </div>
+<div class='step font8 indent36'>Great! We now have our game board. Now that we're done with the painter tool, we need to deactivate it so that we can go about the rest of our project. Click the 'Active' button in the tool again, so that it is no longer lit up. Now, click the 'X' button in the tool's title bar to close the tool. It's very important that you deactivate the tool before you close it - otherwise it can be active, just hidden!</div>
+<div class='numberedlist'>9. </div>
+<div class='step font8 indent36'>Now that we have our game board, we need to create our first actor! This actor will become the Player later, when we add scripts. We'll use a sphere for the player. Click the Sphere icon on the main toolbar.</div>
+<img class='image' src='c5lomfc5.lvq' />
+
+<div class='numberedlist'>10. </div>
+<div class='step font8 indent36'>You should see a sphere object appear right in the center of the viewport. By default, that sphere is checkered. We'll change this in a moment. First, we need to select the sphere so we can edit it. To do so, we first need to put the software into selection mode. Click the 'Select by clicking' button on the toolbar. You'll know select mode is active when the button turns blue.</div>
+<img class='image' src='1n3p5hos.0dx' />
+
+<div class='inset Color15461355'>
+Info: You can also enter selection mode with the hotkey 'Q' on the keyboard
+</div>
+<div class='numberedlist'>11. </div>
+<div class='step font8 indent36'>Now, click on the sphere in the main 3D window once with the left mouse button. You should see a white outline appear around the sphere, as well as a brightly colored axis graphic. It should look something like this:</div>
+<img class='image' src='5abtsibs.klv' />
+
+<div class='inset Color15394756'>
+Remember: IT's very important that the Painter Tool is deactivated. If you are still seeing a faint box following under your cursor, the tools it active but hidden. Open is as we did in step 2, deactivate it by clicking the Active button. Verify that the button is not lit, then close the tool.
+</div>
+<div class='numberedlist'>12. </div>
+<div class='step font8 indent36'>Because we don't know exactly where the sphere was created (it's created at the center of your view) let's go ahead and reset its position, rotation, and scale. Find the 'Edit' menu on the menu bar, then open the sub menu 'Transforms' and finally, choose 'Reset Transforms'. This will zero out the position, rotation and scale of the sphere.</div>
+<img class='image' src='uul3pvgg.05d' />
+
+<div class='numberedlist'>13. </div>
+<div class='step font8 indent36'>Now, we need to go ahead and name the sphere so that we can find it later. All objects have a set of properties you can edit in a window called the Property Editor. We need to open the property editor, and change the Display Name property of the sphere to something nice, like 'Player'. First, while the sphere is still selected, open the Property Editor by finding the 'Properties' tab on the right side of the screen.</div>
+<img class='image' src='z5vps2rh.gjn' />
+
+<div class='numberedlist'>14. </div>
+<div class='step font8 indent36'>Click it to open the Property Editor. It will appear in the side panel just like the painter tool did. Find the Display Name property, which is the first textbox on the page, and change the value to 'Player' by clicking in the box and typing.</div>
+<img class='image' src='zjjcabla.y3y' />
+
+<div class='inset Color15461355'>
+Info: The active text field, where the text from the keyboard is input, will be outlined in blue.
+</div>
+<div class='numberedlist'>15. </div>
+<div class='step font8 indent36'>We also need to make the sphere smaller. The properties that you can edit are divided into categories. The parameters for the generation of primitive objects like spheres and boxes will be under the 'Primitive' category. Click the 'Primitive: Sphere1' then find the Radius setting. Either type in the box, or use the slider to change the radius to .5</div>
+<div class='inset Color13955322'>
+Note: Don't be confused that the tab says 'Primitive: Sphere1' even though we just changed the object's name to Player. The UI will update the next time it's loaded.
+</div>
+<img class='image' src='xoesdkay.l54' />
+
+<div class='numberedlist'>16. </div>
+<div class='step font8 indent36'>Now, since the sphere was centered at (0, 0, 0). So that the object is not intersecting the ground, let's move it up. We'll do so precisely by typing in the Z value. Still in the Property Editor, Open the Transform Tab, and find the 3rD text box from the left under the Translation label. This value is the Z coordinate of the spheres position. Enter ".6". You'll see the sphere move slightly.</div>
+<img class='image' src='f2y4crtx.4cw' />
+
+<div class='numberedlist'>17. </div>
+<div class='step font8 indent36'>Next, let's go ahead and make the sphere yellow, just for kicks. Find the Material tab. Its right below the Properties tab on the right of the screen. When you click this tab, the Material Editor will load into the side panel.</div>
+<img class='image' src='jo5vll42.rhl' />
+
+<div class='numberedlist'>18. </div>
+<div class='step font8 indent36'>So, we want to do two things. First, click the little white square next to "Diffuse Color." This will let you change the color of the object. Click and drag in the color preview to set the diffuse color to yellow.</div>
+<img class='image' src='ekjpxqvd.y1t' />
+
+<div class='numberedlist'>19. </div>
+<div class='step font8 indent36'>Let's also remove the default texture layer. The material editor allows you to link several different images to different properties of the surface, like a color map or a bump map. The default material has a checker texture for the diffuse map. Each texture gets a small tab at the bottom of the Material Editor. Click the "Texture Layer 0" tab to open the settings for the layer, then find the 'Delete Layer' button. The sphere should now be a solid yellow. I've deselected it so you can see it better in the image below, but you should still see the selection outline and the brightly colored axis graphic.</div>
+<img class='image' src='nltlvs3z.gwn' />
+
+<div class='numberedlist'>20. </div>
+<div class='step font8 indent36'>Now, I've got a challenge for you. We need to create a cube with a width length and height of .25. I'd also like you to color it blue, and remove its default checker texture as well. Finally, I want you to position it so that it's in the center of a path, with its Z coordinate at .6. Look over the instructions above, and I'm sure you can figure it out. Also, go ahead and name it 'Food1'. When you're done, you should have something that looks like this:</div>
+<img class='image' src='vebdauo5.3wj' />
+
+<div class='numberedlist'>21. </div>
+<div class='step font8 indent36'>The next step is vital. We need to mark this object so that we can identify it from within the code later. Because there are going to be a lot of food objects, remembering all their names is going to be hard. Instead, we'll assign a custom property to the object called 'gametype'. We'll make the value of this property 'food'. While the first food object is selected, click the 'Scripts' tab on the right of the screen to open the Script Editor. When the Script Editor opens, find and click the Property tab.</div>
+<img class='image' src='0toziuha.3es' />
+
+<div class='inset Color13955322'>
+Note: We'll take much more about the Script Editor in part 3. For now, let's just add the property and not worry about the rest.
+</div>
+<div class='numberedlist'>22. </div>
+<div class='step font8 indent36'>Now, find the button in the bottom right that says 'New Property'. Click it.</div>
+<img class='image' src='q5bddfsa.1jy' />
+
+<div class='numberedlist'>23. </div>
+<div class='step font8 indent36'>When the prompt opens, type 'gametype'. This will be the name of the new property. Click OK</div>
+<img class='image' src='nj5m1kmq.33l' />
+
+<div class='numberedlist'>24. </div>
+<div class='step font8 indent36'>On the next prompt, enter 'food'. This will be the value of the new property. Click OK</div>
+<img class='image' src='nzc3bk0b.iwr' />
+
+<div class='numberedlist'>25. </div>
+<div class='step font8 indent36'>You can now close the Script Editor. Use the down arrow on the right at the top of the panel.</div>
+<img class='image' src='down0mar.sli' />
+
+<div class='inset Color13955322'>
+Note: It's very important that this step is successful. You can verify that the property was created by finding it in the list of properties on the left of the Properties Tab. If you see a button labeled 'gametype', we're good to go.
+</div>
+<div class='numberedlist'>26. </div>
+<div class='step font8 indent36'>We also need to mark the food object as 'passable'. This will allow the player to move through the food without colliding with it later in part 3. In the Properties Editor for the Food object, find and select the 'passable' checkbox.</div>
+<img class='image' src='oklvrpuq.upk' />
+
+<div class='numberedlist'>27. </div>
+<div class='step font8 indent36'>We now have to copy the Food0 object to each point on the game along the paths. While keyboard focus is on the main 3D view, you can hit CTRL+D duplicate the selected object. Duplicate the object, the click and drag along the RED or GREEN axis of the brightly colored axis graphic. You should see a new box move under the cursor.</div>
+<img class='image' src='lzdt5unr.0cw' />
+
+<div class='numberedlist'>28. </div>
+<div class='step font8 indent36'>Take some time and fill the game board with food objects as necessary. The editor tools have many options to make this faster. With some practice, you can do this in just a few minutes.</div>
+<img class='image' src='yldpqhlt.mbh' />
+
+<div class='inset Color15461355'>
+Info: You can select more than one object at a time, and move or duplicate whole rows of food! Click and drag with the left mouse button to draw a rectangle on the screen. All objects in the rectangle will be selected. You can hold CTRL or ALT to add or subtract from the selection as well.
+</div>
+<div class='inset Color15394756'>
+Remember: You must be in selection mode before you can click to select objects.
+</div>
+<div class='numberedlist'>29. </div>
+<div class='step font8 indent36'>Using the same technique you've now mastered, duplicate the player object. Change its color to red, move it to the corner of the board, and name it Ghost.</div>
+<img class='image' src='wr0gmabj.m3n' />
+
+<div class='numberedlist'>30. </div>
+<div class='step font8 indent36'>Now, lets just remove that black and white grid. The texture of the default ground grid can be changed by editing the material of the Scene object. To select the scene, use the dropdown menu. Find Edit->Select->Select Scene.</div>
+<img class='image' src='gebtyx3b.e3l' />
+
+<div class='numberedlist'>31. </div>
+<div class='step font8 indent36'>Not much will appear to change, but the material editor will now control the texture of the background grid. Use the material editor just like before to create a solid white background.</div>
+<div class='step font14 indent0'>Part 3: Scripting</div>
+<div class='step font8 indent0'>Alright! Now we are cooking with fire. The whole scene is set up, and we just need to make the game work. To do so, we need to add some behaviors to the objects. This means we'll have to write some code. This isn't a programming course, and I'm not going to discuss every line of text. Instead, I'll give you the code, and you can apply it to the objects. For anyone familiar with JavaScript, you'll immediately see hundreds of way to make this game more interesting, but let's stick with the basics for now.</div>
+<div class='numberedlist'>1. </div>
+<div class='step font8 indent36'>First, let's do the player code. Select the Player object, and open up the script editor. Make sure you're on the Methods tab, and scroll down the list on the left until you see the word 'tick'. It should appear greyed out. Click it.</div>
+<img class='image' src='5eqs0rfo.svj' />
+
+<div class='numberedlist'>2. </div>
+<div class='step font8 indent36'>The system will ask you if you want to create a new method called 'tick'. Click ok. 'Tick' is the method that the engine will call at every frame of animation to update your objects.</div>
+<img class='image' src='210ynfb3.g3p' />
+
+<div class='numberedlist'>3. </div>
+<div class='step font8 indent36'>Now, paste the below code in the script window.</div>
+<div class='code'>function tick(){    if (this.motionVec)    {        var oldpos = this.transformAPI.getPosition();        this.transformAPI.move(this.motionVec, 'parent');        var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), .35,        {            ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],            filter: function(n)            {                if (n.passable) return false;                return true;            }        });        if (hit && hit.length)        {                        this.transformAPI.setPosition(oldpos);        }    }}
+</div>
+<div class='numberedlist'>4. </div>
+<div class='step font8 indent36'>Click 'Save Method' to save this code on the object as the Tick method.</div>
+<img class='image' src='2n4yj5vj.ta3' />
+
+<div class='numberedlist'>5. </div>
+<div class='step font8 indent36'>Now, move over to the 'Events' tab, and click the 'keyDown' suggestion on the left. This process is very similar to the process to create the 'Tick' method. Enter the code below into the 'KeyDown' event, and save it.</div>
+<div class='code'>function keyDown(eventData, nodeData){    if (eventData.keysDown.rightarrow)    {        this.motionVec = [0, -.5, 0];        this.movestate = 'up';    }    if (eventData.keysDown.leftarrow)    {        this.motionVec = [0, .5, 0];        this.movestate = 'down';    }    if (eventData.keysDown.uparrow)    {        this.motionVec = [.5, 0, 0];        this.movestate = 'left';    }    if (eventData.keysDown.downarrow)    {        this.motionVec = [-.5, 0, 0];        this.movestate = 'right';    }}
+</div>
+<div class='numberedlist'>6. </div>
+<div class='step font8 indent36'>Finally, insert and save the following code in the 'keyUp' event.</div>
+<div class='code'>function keyUp(eventData, nodeData){    if (eventData.keysUp.rightarrow && this.movestate == 'up')    {        this.motionVec = null;    }    if (eventData.keysUp.leftarrow && this.movestate == 'down')    {        this.motionVec = null;    }    if (eventData.keysUp.uparrow && this.movestate == 'left')    {        this.motionVec = null;    }    if (eventData.keysUp.downarrow && this.movestate == 'right')    {        this.motionVec = null;    }}
+</div>
+<div class='numberedlist'>7. </div>
+<div class='step font8 indent36'>That's it for the player. Deselect the player object, then click in the main 3D window. Use the arrow keys on the keyboard. You should see the player move!</div>
+<div class='inset Color13955322'>
+Note: The movement directions may appear wrong, as if the keys are mapped the wrong way. Don't worry about this - it depends on the camera orientation. In part 4, we'll be sure to make a camera that looks in the right direction, so the keys seem to work properly.
+</div>
+<div class='numberedlist'>8. </div>
+<div class='step font8 indent36'>Now, we need to create an object to hold some additional logic. This is the object that will check for the intersection of the player and to food, and make the food disappear. It will also monitor for when the game is complete. Use the skills you have learned above, and create a new box. Name it GameManager, and add the following code as its 'tick' method.</div>
+<div class='code'>function tick(){    if (!this.pacman)        this.pacman = this.Scene.children_by_name.Player;    if (!this.piplist)    {        this.piplist = [];        for (var i = 0; i < this.Scene.children.length; i++)        {            if (this.Scene.children[i].gametype == 'food')            {                this.piplist.push(                {                    pip: this.Scene.children[i],                    pos: this.Scene.children[i].transformAPI.getPosition()                });                this.Scene.children[i].visible = true;            }        }        console.log(this.piplist);    }    var playerpos = this.pacman.transformAPI.getPosition();    var activecount = this.piplist.length;    for (var i = 0; i < this.piplist.length; i++)    {        var pip = this.piplist[i].pip;        if (pip.visible == true)        {            var pos = this.piplist[i].pos;            if (Vec3.distanceSquared(playerpos, pos) < .25)            {                pip.visible = false;            }        }        else        {            activecount--;        }    }    if (activecount == 0)    {        alertify.alert('You win!');        this.reset();    }}
+</div>
+<div class='numberedlist'>9. </div>
+<div class='step font8 indent36'>Now, when you move across a food object, it will disappear. Move around and collect all the food!</div>
+<div class='numberedlist'>10. </div>
+<div class='step font8 indent36'>We still need a way to reset the game. Go to the 'Events' tab of the script editor, and find the 'New Event' button. Click it, and when prompted, type 'reset'.</div>
+<img class='image' src='rtgwloec.jop' />
+
+<div class='numberedlist'>11. </div>
+<div class='step font8 indent36'>When prompted for the number of parameters, just leave the value at 0 and click OK. Paste the code below into the script window for the reset event.</div>
+<div class='code'>function reset(){    delete this.piplist;    this.Scene.children_by_name.Ghost.transformAPI.setPosition(4, -17, .5);    this.Scene.children_by_name.Player.transformAPI.setPosition(-2, -10, .5);   }
+</div>
+<div class='numberedlist'>12. </div>
+<div class='step font8 indent36'>Save the event code with the button labeled 'Save Event'. Now, clicking the 'Trigger Event' button will reset the game. Note that the exact values used above depend on the exact setup of your level.</div>
+<div class='inset Color15394756'>
+Remember: You can find the proper values for your level by selecting the Ghost or the player, and reading the translation out of the property editor.
+</div>
+<img class='image' src='am1bn0wh.qst' />
+
+<div class='numberedlist'>13. </div>
+<div class='step font8 indent36'>Finally, we just need to add the code to make the Ghost work. Use the code below, but notice where I've added a note. This value should be the same value you used above - the default position for the player. Select the Ghost object, open the script editor, create a tick method, and paste in the code below.</div>
+<div class='code'>function tick(){    if (window.paused) return;    if (!this.pacman)        this.pacman = this.Scene.children_by_name.Player;    if (!this.pacman) return;    var random = Math.random() * 2000;    if (random > 0 && random < 10)    {        this.motionVec = [0, .5, 0];    }    if (random > 10 && random < 20)    {        this.motionVec = [0, -.5, 0];    }    if (random > 20 && random < 30)    {        this.motionVec = [.5, 0, 0];    }    if (random > 30 && random < 40)    {        this.motionVec = [-.5, 0, 0];    }    var oldpos = this.transformAPI.getPosition();    oldpos[0] = Math.floor(oldpos[0] * 2) / 2;    oldpos[1] = Math.floor(oldpos[1] * 2) / 2;    oldpos[2] = Math.floor(oldpos[2] * 2) / 2;    this.transformAPI.setPosition(oldpos);    if (Vec3.distance(oldpos, this.pacman.transformAPI.getPosition()) < 1.3)    {        alertify.log('Got you!');        this.pacman.transformAPI.setPosition(-2, -10, .6);    }    if (this.motionVec)    {        this.transformAPI.move(this.motionVec, 'parent');        var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), .35,        {            ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],            filter: function(n)            {                if (n.passable) return false;                return true;            }        });        if (hit && hit.length)        {            this.transformAPI.setPosition(oldpos);            var random = Math.random() * 40;            if (random > 0 && random < 10)            {                this.motionVec = [0, .5, 0];            }            if (random > 10 && random < 20)            {                this.motionVec = [0, -.5, 0];            }            if (random > 20 && random < 30)            {                this.motionVec = [.5, 0, 0];            }            if (random > 30 && random < 40)            {                this.motionVec = [-.5, 0, 0];            }        }    }}
+</div>
+<div class='numberedlist'>14. </div>
+<div class='step font8 indent36'>Congratulations! That's it! The game now works, and just needs a bit of polish to be completely finished!</div>
+<div class='step font14 indent0'>Part 4: Finishing touches</div>
+<div class='step font8 indent0'>Great! At this point, our game basically works. The last thing we need to do is create a camera and publish the world. This is pretty easy stuff from here on out.</div>
+<div class='numberedlist'>1. </div>
+<div class='step font8 indent36'>First, let's create a camera object, so that the user of our game does not have to mess with positioning the camera. Use the drop down menu, and find Create->Cameras->Perspective</div>
+<img class='image' src='q2cy0fwa.4ii' />
+
+<div class='numberedlist'>2. </div>
+<div class='step font8 indent36'>When you click this, a camera object will be created at the center of your view. You should see a camera icon appear. If you don't, zoom closer, and make sure you are in selection mode. The icon should look like this:</div>
+<img class='image' src='v3tkfdva.j15' />
+
+<div class='numberedlist'>3. </div>
+<div class='step font8 indent36'>This icon helps you select and place the camera. Click on the camera to select it. You'll see a preview appear in the lower left of the main window that shows you what the camera sees. Move the camera so that it points down at the game board. You'll also see a helpful graphic that shows you in the main view where the camera is pointing. Aim for something like this:</div>
+<img class='image' src='gtjm0o5g.3pk' />
+
+<div class='numberedlist'>4. </div>
+<div class='step font8 indent36'>Let's enter the camera to see exactly what it sees. Find the Camera->Activate Camera item on the dropdown list.</div>
+<img class='image' src='uywagg2t.yhs' />
+
+<div class='numberedlist'>5. </div>
+<div class='step font8 indent36'>When you click it, you'll see this prompt. Choose Camera1, and click ok.</div>
+<img class='image' src='wfktfnat.pr5' />
+
+<div class='numberedlist'>6. </div>
+<div class='step font8 indent36'>You are now looking exactly out of the camera. Use the arrow keys to move the player. Does it seem to go in the right direction? If not, you might need to go back to the Editor Camera, and reposition the camera object. If you're happy with the camera's view, then we're all done inside the editor, and we can move on to publish our game.</div>
+<div class='inset Color13955322'>
+Note: You will probably need to rotate your camera - it really depends on how your level is laid out. Look for the rotate tool on the toolbar. This will switch the axis graphic to a series of rings. Click and drag the rings to rotate the selected object.
+</div>
+<div class='numberedlist'>7. </div>
+<div class='step font8 indent36'>We need to record the ID of our camera object so we can ask the engine to use that camera when we publish. Currently, this is a little difficult, because you cannot copy and paste off of the status bar. The name you need is on the status bar. Make sure you have the camera selected. You should see something like this in the bottom center of the screen.</div>
+<img class='image' src='oosa1ozr.l2d' />
+
+<div class='step font7 indent36'>"SandboxCamera-vwf-4a63df80-3cde-1c26-b69e-fcf4f7612f76"</div>
+<div class='inset Color15394756'>
+Remember: The camera must be selected. If you have accidently deselected the camera, go back to the Editor Camera view, and find the icon for your new camera. Be sure you are in selection mode, and then click the icon. Looking through the camera and selecting it are two different operations.
+</div>
+<div class='numberedlist'>8. </div>
+<div class='step font8 indent36'>The long number next to Camera1 is the value we need. If you're familiar with the JavaScript Console, you can use _Editor.GetSelectedVWFID() to get the value as well.</div>
+<div class='inset Color13955322'>
+Note: This name is randomly generated, and must be entered later exactly. Sorry, I know this step is a pain. We'll find a better way in the future.
+</div>
+<div class='numberedlist'>9. </div>
+<div class='step font8 indent36'>Finally, before we leave the game, let's set the thumbnail that users will see on the main page. While looking out of your camera, use the dropdown menu item File->Set World Thumbnail. You should see a slight flicker in the main window. The exact image you see will now be the thumbnail for this world on the world's page.</div>
+<img class='image' src='3zysbnty.qbv' />
+
+<div class='numberedlist'>10. </div>
+<div class='step font8 indent36'>Since we're done editing the game, let's leave this world. Use the Log out button in the upper left of the screen. Your game will be saved automatically.</div>
+<img class='image' src='5rfldzwq.qkc' />
+
+<div class='numberedlist'>11. </div>
+<div class='step font8 indent36'>Now, we need to find your world so we can publish it. Go to the Worlds page. Use the search box to search for your world. Since I named the world Tutorial Demo, I'll search 'Tut'</div>
+<img class='image' src='53ss5wpg.jny' />
+
+<div class='numberedlist'>12. </div>
+<div class='step font8 indent36'>When you find your world, hold your mouse over the thumbnail. You should see a tiny printer icon appear in the bottom of the world's box. When you hold your mouse over this printer icon, the tooltip will say 'Publish World' Click that icon.</div>
+<img class='image' src='2onhudve.vcg' />
+
+<div class='inset Color13955322'>
+Note: You can change the publish settings in the future. If you need to keep editing, come back to the publish page, uncheck the publish button, then click publish. The world is now editable again.
+</div>
+<div class='numberedlist'>13. </div>
+<div class='step font8 indent36'>Now, we just have to set a few settings. First, check the 'Publish World' checkbox. Since this is a single player game, check the 'Single Player' checkbox as well. Be sure that "Create and Avatar for each user", "Allow Editor Tools", and "Use Default Camera" are unchecked. In the box that appears under "Use Default Camera" enter the ID of your camera that we found above.</div>
+<div class='numberedlist'>14. </div>
+<div class='step font8 indent36'>Click the publish button! You're done! You now have a completely working game published on the VWS website. To play the game, just click on the world's title from the World's page to load it.</div>
+<div class='step font14 indent0'>Conclusion</div>
+<div class='step font8 indent0'>You can share this game with others by copying and emailing the direct link, or your friends can search for it on the worlds page. By the end of this tutorial, you should have a firm foundation for building more complex games in the future. Hopefully, you'll also get comfortable with the user interface of the VWS software, and start thinking of other things to create! Here are a few challenges that build on this lesson. Make 3 Ghosts. Make a bigger level. Make the food come back after a certain time. If you're feeling really ambitious, make the Ghost behave with more intelligence. There is literally an infinite amount of ideas for expanding this simple tutorial. Check out the appendix below for more info on how the code works, if you're interested in making a more complex game. You can play the finished (with a few improvements) game here: http://vwf.adlnet.gov/472/adl/sandbox/yU4EixCOyfp6RQaW/</div>
+<div class='step font14 indent0'>Appendix 1: Code explanation</div>
+<div class='step font8 indent0'>It's not absolutely necessary for you to understand what the code is doing in order to make the game work. However, if you do know a bit of JavaScript, you might want to expand on this tutorial to build a more complex game. In that case, I'm providing here some explanation for the code you see above. I'll break it down by each object's methods and events, and each major portion of each of those scripts.</div>
+<div class='step font12 indent0'>The Player</div>
+<div class='step font8 indent0'>The code for the tick method on the player object.</div>
+<div class='code'>function tick(){    if (this.motionVec)    {        var oldpos = this.transformAPI.getPosition();        this.transformAPI.move(this.motionVec, 'parent');        var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), .35,        {            ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],            filter: function(n)            {                if (n.passable) return false;                return true;            }        });        if (hit && hit.length)        {                        this.transformAPI.setPosition(oldpos);        }    }}
+</div>
+<div class='code'>function tick(){...}
+</div>
+<div class='step font8 indent0'>Below, we are just declaring the function. Its name, 'tick', is a special case name within the VWS system. Tick functions on objects are called 20 times a second. This is where you can change values over time to create motion or other animations.</div>
+<div class='code'>...if (this.motionVec)    {        var oldpos = this.transformAPI.getPosition();        this.transformAPI.move(this.motionVec, 'parent');......
+</div>
+<div class='step font8 indent0'>If this object (the Player), has a motionVec variable, then get and store the current object position in a variable called oldpos. Then move the object (Player) by the motion vector. So, if the Player is at [1,0,0], and motionVec is [1,0,0], make the new position of the player [2,0,0]. You can see how, by calling this at every tick, the value of the X coordinate of the player's position increases over time. This is the basic mechanism for moving the player. The KeyDown and KeyUp events control what the value of this.motionVec is.</div>
+<div class='code'>...var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), .35,        {            ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],            filter: function(n)            {                if (n.passable) return false;                return true;            }        });...
+</div>
+<div class='step font8 indent0'>This is a much more interesting bit of code. It's what prevents the character from intersecting the walls. _SceneManager.SphereCast is a function that allows you to query the geometry of the world, to decide if any of the objects in the world intersect a sphere. The first parameter is the center of the sphere you would like to use to check for intersections. The second parameter, in this case .35, is the radius of the sphere. Notice how we are basically saying "Now that we've moved the player, does a sphere at his new position with a radius of .35 interesect any of the world geometry?". _SceneManager.SphereCast also takes an options object as the final parameter. This object here contains a list of graphics objects to ignore - namely, the sphere itself, and the Axis control you've been using to move objects around. This is sort of a leaky abstraction - from game code, your objects should have no knoledge of the Axis "gizmo" that you use to move objects. We'll fix this in time. Also, eventaully you'll be able to ignore objects by the names you give them, rather than the ugly _Editor.findviewnode(this.id).... Because the SphereCast function operates over the graphic objects, it currently expects you to provide the actaul 3D sphere object from the graphics engine. _Editor.findviewnode(this.id) is how you access this (for now).</div>
+<div class='code'>if (hit && hit.length)        {                        this.transformAPI.setPosition(oldpos);        }
+</div>
+<div class='step font8 indent0'>This last bit is much easier. It just says "Well, if we did hit something, put the Player back where he was!" That's all there is to preventing intersections for this simple game.</div>
+<div class='step font8 indent0'>The code for keyDown</div>
+<div class='code'>function keyDown(eventData, nodeData){    if (eventData.keysDown.rightarrow)    {        this.motionVec = [0, -.5, 0];        this.movestate = 'up';    }    if (eventData.keysDown.leftarrow)    {        this.motionVec = [0, .5, 0];        this.movestate = 'down';    }    if (eventData.keysDown.uparrow)    {        this.motionVec = [.5, 0, 0];        this.movestate = 'left';    }    if (eventData.keysDown.downarrow)    {        this.motionVec = [-.5, 0, 0];        this.movestate = 'right';    }}
+</div>
+<div class='step font8 indent0'>This one is much simpler, and I won't spend too much time on it. The engine notifies your objects about user input events by calling the Event code you inserted in the Script Editor panel. Because we had the Player selected when we created the code above, 'this' means the player. So, think about the code above in the tick section. You can see how the value of the player motion depends on the motionVec, and the value of motionVec is controlled by the keyDown events. We also track this.movestate just to make it easier to figure out what key is currently pressed. This information is also contained in the motionVec variable, but I've done it this way just for readability. I won't go into any detail on the keyUp code. It should be self explanatory.</div>
+<div class='step font12 indent0'>The Ghost</div>
+<div class='step font8 indent0'>The Ghost object is a very simple example of AI. It just randomly moves around the scene, and detects when it gets close to the player. Here is the total code for the Ghost. It's all located inside the objects tick method.</div>
+<div class='code'>if (window.paused) return;    if (!this.pacman)        this.pacman = this.Scene.children_by_name.Player;    if (!this.pacman) return;...
+</div>
+<div class='step font8 indent0'>In this first section, we just try to get a reference to the player object. If can't get one for some reason, we just end the code by calling return. Notice how we save the reference to the player in the variable this.pacman? Looking up the object by its name is a somewhat expensive operation. It makes much more sense to find it once and hold onto it in a variable, then to look it up each time.</div>
+<div class='code'>var random = Math.random() * 2000;    if (random > 0 && random < 10)    {        this.motionVec = [0, .5, 0];    }    if (random > 10 && random < 20)    {        this.motionVec = [0, -.5, 0];    }    if (random > 20 && random < 30)    {        this.motionVec = [.5, 0, 0];    }    if (random > 30 && random < 40)    {        this.motionVec = [-.5, 0, 0];    }
+</div>
+<div class='step font8 indent0'>The Ghost code will work a lot like the player code. Every frame, we move the object by some value. Because the Ghost does not accept keyboard inputs, it instead uses a random number. Here, we randomly choose a direction to move.</div>
+<div class='code'>var oldpos = this.transformAPI.getPosition();    oldpos[0] = Math.floor(oldpos[0] * 2) / 2;    oldpos[1] = Math.floor(oldpos[1] * 2) / 2;    oldpos[2] = Math.floor(oldpos[2] * 2) / 2;    this.transformAPI.setPosition(oldpos);
+</div>
+<div class='step font8 indent0'>This block of code is just some housekeeping. In this game, it's important that objects move in strait lines, and that they never end up with fractional positions, other then half steps between numbers. If the X position of the Ghost object is 1.34324343 or something like that, it can get stuck in walls. While the code normally does not allow the object to get into that sort of a state, this code just ensures it never happens. We read the position, clamp it to halfsteps with Math.floor, and write it back.</div>
+<div class='code'>if (Vec3.distance(oldpos, this.pacman.transformAPI.getPosition()) < 1.3)    {        alertify.log('Got you!');        this.pacman.transformAPI.setPosition(-2, -10, .6);    }
+</div>
+<div class='step font8 indent0'>This simple block of code is the code that checks if the player got too near the Ghost. We could have used SphereCast like above, but this is simpler and works just as well. When the player gets too close, we send the player back to the start position, and make a little popup that says 'Got you!'  Note that the value in the setPosition will depend on the layout of your level.</div>
+<div class='code'>if (this.motionVec)    {        this.transformAPI.move(this.motionVec, 'parent');        var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), .35,        {            ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],            filter: function(n)            {                if (n.passable) return false;                return true;            }        });
+</div>
+<div class='step font8 indent0'>This is the code that moves the ghost, just like the player. The ghost moves the amount of his motionVec. We use the exact same collision detection code, filtering out the ghosts own polygons, and any polygons of passable objects.</div>
+<div class='code'>if (hit && hit.length){    var random = Math.random() * 40;    if (random > 0 && random < 10)    {        this.motionVec = [0, .5, 0];    }    if (random > 10 && random < 20)    {        this.motionVec = [0, -.5, 0];    }    if (random > 20 && random < 30)    {        this.motionVec = [.5, 0, 0];    }    if (random > 30 && random < 40)    {        this.motionVec = [-.5, 0, 0];    }
+</div>
+<div class='step font8 indent0'>This final bit of code is very similar to the first block that randomly changed the motionVec. The difference is that this code is in the block with if(hit). This means that the code will only execute when the object hits something. Notice how the random chance of changing the value is much higher. Since the ghost has hit an object, it must change direction!</div>
+<div class='step font12 indent0'>The GameManager</div>
+<div class='step font8 indent0'>Like the Ghost, the GameManager has only a tick method. However, unlike the Ghost, the GameManager is not all that interested in its own location or movement. Instead, we use the GameManager object to hold some global code that implements the game logic. The gamemanager also has the necessary code to reset the game implemented in an event call 'reset'</div>
+<div class='code'>if (!this.pacman)        this.pacman = this.Scene.children_by_name.Player;
+</div>
+<div class='step font8 indent0'>First, we just find and cache a reference to the player object. It's more efficient to cache this value then to find it at every tick.</div>
+<div class='code'>if (!this.piplist)    {        this.piplist = [];        for (var i = 0; i < this.Scene.children.length; i++)        {            if (this.Scene.children[i].gametype == 'food')            {                this.piplist.push(                {                    pip: this.Scene.children[i],                    pos: this.Scene.children[i].transformAPI.getPosition()                });                this.Scene.children[i].visible = true;            }        }    }
+</div>
+<div class='step font8 indent0'>This block of code is part of the setup of the game. Notice how it's surrounded by "if(!this.piplist)". So, if the object is not initialized with that value, we go ahead and set that value up. The this.piplist variable is an array that holds references to each food item in the scene, and the position of that object. We iterate over all the objects in the scene with "for (var i = 0; i < this.Scene.children.length; i++)". Notice how we next check each object to see if its 'gametype' property is equal to 'food'. You'll remember where we set this up in part 2. When you copied all the copies of the food object, this property copied as well. That's how we can check to see if each object is a food object, or something else like a wall. You'll also notice that this block of code caches the positions of each food inside of this.piplist[i].pos. Caching these values is efficient, because the objects never move! This block of code also sets each food object back to visible.</div>
+<div class='code'>var playerpos = this.pacman.transformAPI.getPosition();    var activecount = this.piplist.length;
+</div>
+<div class='step font8 indent0'>Here, we simply get the current position of the player, and the total number of food objects.</div>
+<div class='code'>for (var i = 0; i < this.piplist.length; i++)    {        var pip = this.piplist[i].pip;        if (pip.visible == true)        {            var pos = this.piplist[i].pos;            if (Vec3.distanceSquared(playerpos, pos) < .25)            {                pip.visible = false;            }        }        else        {            activecount--;        }    }
+</div>
+<div class='step font8 indent0'>Here is the real meat of the goal of the game. Loop over every bit of food. If that food is visible, and if the distance from the food to the player is less than .25, make the food object invisible by calling .visible=false; If the food is not visible, just subtract 1 from the total count. So, after this loop has run, activecount tells us how much food is still not eaten. What do we do with that?</div>
+<div class='code'>if (activecount == 0)    {        alertify.alert('You win!');        this.reset();    }
+</div>
+<div class='step font8 indent0'>It's as simple as that. If there is not more active food (food which is visible, then we show a message, and reset the game. This.reset() triggers the reset event.</div>
+<div class='code'>function reset(){    delete this.piplist;    this.Scene.children_by_name.Ghost.transformAPI.setPosition(4, -17, .5);    this.Scene.children_by_name.Player.transformAPI.setPosition(-2, -10, .5);}
+</div>
+<div class='step font8 indent0'>In the reset function, we just place the ghost and player back at their staring positions, and delete the list of food. Remember that, at the next tick, if the GameManager does not have a list of food, it will create that list, and make all the food visible.</div>
+<div class='inset Color13955322'>
+Note: The positions that the ghost and player need to be set to will differ in your level from these values.
+</div>
+<div class='step font14 indent0'>Appendix 2: About the VWS</div>
+<div class='step font8 indent0'>The Virtual World Sandbox is a project from Advanced Distributed Learning to bring game based training and scenario design to more people by building a completely HTML5, web based, multiuser simulation engine. The VWS application is built on top of the Virtual World Framework, a next generation simulation foundation. The VWS website is a demonstration site, and should be used for exploration and entertainm
